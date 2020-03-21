@@ -5,14 +5,23 @@ function arrayDiff(a, b) {
         console.log(b);
         return 0;
     }
-    else {        
-        for (var ib=0; ib <= b.length; ib++) {
-            var porownane = a;
+    else {
+        var porownane = a;
+        for (var ib = 0; ib < b.length; ib++) {
+
             a.forEach((el, i) => {
                 if (el === b[ib]) {
                     porownane.splice(i, 1);
-                }                
-            });                      
+
+                    porownane.forEach((el, i) => {
+                        if (el === b[ib]) {
+                            porownane.splice(i, 1);
+                        }
+                    });
+                }
+
+            });
+
         }
         console.log(ib);
         console.log(porownane);
